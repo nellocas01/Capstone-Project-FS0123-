@@ -5,6 +5,17 @@ Progetto finale del corso Full Stack Developer di EPICODE
 
 Benvenuto nel repository del progetto di organizzazione partite di calcetto. Questo progetto consiste nello sviluppo di un'applicazione web che permette agli utenti di organizzare partite di calcetto, unirsi a partite esistenti e gestire i dettagli delle partite in modo semplice e intuitivo.🔥
 
+## Descrizione
+
+"Calcetto Organizer" è una piattaforma innovativa che mette insieme gli appassionati di calcetto di ogni livello e permette loro di creare e partecipare a partite entusiasmanti. Con questa applicazione, puoi organizzare partite con i tuoi amici o trovare nuove persone con cui giocare nella tua zona.
+
+Non importa se sei un giocatore esperto o un principiante, "Calcetto Organizer" ti offre un'esperienza completa per la gestione delle partite di calcetto. Puoi creare nuove partite, specificare la data, l'orario e il luogo, invitare i tuoi amici o lasciare che altre persone si uniscano alle tue partite. Inoltre, puoi cercare partite esistenti nella tua zona e partecipare a quelle che ti interessano.
+
+"Calcetto Organizer" ti fornisce anche una panoramica completa delle informazioni relative alle partite, inclusa la lista dei partecipanti, il luogo, l'orario e altre informazioni utili. Puoi gestire le partite create da te, modificarne i dettagli o cancellarle se necessario.
+
+Sia che tu voglia organizzare una partita con i tuoi amici, trovare nuove persone con cui giocare o semplicemente partecipare a partite di calcetto entusiasmanti, "Calcetto Organizer" è qui per rendere tutto più semplice e divertente.
+
+
 ## Funzionalità🎯
 
 - Creazione di partite: Gli utenti possono creare nuove partite specificando la data, l'orario e il luogo.

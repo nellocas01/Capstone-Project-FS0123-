@@ -7,7 +7,7 @@ Benvenuto nel repository del progetto di organizzazione partite di calcetto. Que
 
 ## Descrizione
 
-"Calcetto Organizer" è una piattaforma innovativa che mette insieme gli appassionati di calcetto di ogni livello e permette loro di creare e partecipare a partite entusiasmanti. Con questa applicazione, puoi organizzare partite con i tuoi amici o trovare nuove persone con cui giocare nella tua zona.
+"StonksBall" è una piattaforma innovativa che mette insieme gli appassionati di calcetto di ogni livello e permette loro di creare e partecipare a partite entusiasmanti. Con questa applicazione, puoi organizzare partite con i tuoi amici o trovare nuove persone con cui giocare nella tua zona.
 
 Non importa se sei un giocatore esperto o un principiante, "Calcetto Organizer" ti offre un'esperienza completa per la gestione delle partite di calcetto. Puoi creare nuove partite, specificare la data, l'orario e il luogo, invitare i tuoi amici o lasciare che altre persone si uniscano alle tue partite. Inoltre, puoi cercare partite esistenti nella tua zona e partecipare a quelle che ti interessano.
 

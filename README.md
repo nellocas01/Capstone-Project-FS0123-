@@ -1,5 +1,6 @@
 # Capstone-Project-FS0123-
-Progetto finale del corso Full Stack Developer di EPICODE
+Progetto finale lato BackEnd del corso Full Stack Developer di EPICODE
+FrontEnd : https://github.com/nellocas01/Capstone-Project-FS0123-FrontEnd
 
 # Organizzazione Partite di Calcetto⚽
 

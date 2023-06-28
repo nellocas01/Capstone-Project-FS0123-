@@ -31,8 +31,7 @@
 //	private int numPartecipanti;
 //	@Enumerated(EnumType.STRING)
 //	private Livello livello;
-//	@Enumerated(EnumType.STRING)
-//	private Stato stato;
+
 //
 //	@OneToMany(mappedBy = "partita")
 //	private List<Recensione> recensioni;

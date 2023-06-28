@@ -99,4 +99,10 @@ public class User implements UserDetails {
 		return true;
 	}
 
+	// TEST
+//	public static Object withUsername(String string) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+
 }

@@ -55,7 +55,7 @@ public class UsersController {
 		return usersService.findById(userId);
 	}
 
-	// Request method 'PUT' is not supported --> testata
+	// testata OK
 	@PutMapping("/{userId}")
 	@PreAuthorize("hasAuthority('ADMIN')")
 	public User updateUser(@PathVariable UUID userId, @RequestBody UserCreatePayload body) throws Exception { // => devo

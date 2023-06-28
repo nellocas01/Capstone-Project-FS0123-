@@ -19,9 +19,16 @@ public class AdminRunner implements CommandLineRunner {
 	@Autowired
 	UsersRepository usersRepo;
 
-	// mi serve per impostare la password criptata
+//	// mi serve per impostare la password criptata
+//	@Autowired
+//	private final PasswordEncoder bcrypt;
+
+	private final PasswordEncoder bcrypt;
+
 	@Autowired
-	private PasswordEncoder bcrypt;
+	public AdminRunner(PasswordEncoder bcrypt) {
+		this.bcrypt = bcrypt;
+	}
 
 	// mi serve per recuperare il ruolo ADMIN
 	@Autowired

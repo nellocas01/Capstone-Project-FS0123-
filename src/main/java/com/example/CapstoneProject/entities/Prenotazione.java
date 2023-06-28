@@ -21,6 +21,8 @@
 //	@GeneratedValue
 //	private UUID id;
 //	private Date data;
+//	@Enumerated(EnumType.STRING)
+//	private Stato stato;
 //
 //	@ManyToOne
 //	private Campo campo;

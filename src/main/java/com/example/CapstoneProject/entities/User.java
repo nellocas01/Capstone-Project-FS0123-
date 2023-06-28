@@ -3,6 +3,7 @@ package com.example.CapstoneProject.entities;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
@@ -19,6 +20,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -42,8 +44,8 @@ public class User implements UserDetails {
 	@JsonIgnore
 	private Set<Role> roles = new LinkedHashSet<>();
 
-//	@OneToMany(mappedBy = "utente")
-//	private List<Prenotazione> prenotazioni;
+	@OneToMany(mappedBy = "utente")
+	private List<Prenotazione> prenotazioni;
 //
 //	@OneToMany(mappedBy = "utente")
 //	private List<Recensione> recensioni;

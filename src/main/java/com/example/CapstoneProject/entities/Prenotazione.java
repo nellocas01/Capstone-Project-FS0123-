@@ -1,14 +1,12 @@
 package com.example.CapstoneProject.entities;
 
 import java.util.Date;
-import java.util.List;
 import java.util.UUID;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -27,8 +25,8 @@ public class Prenotazione {
 	@OneToOne
 	private Campo campo;
 
-	@OneToMany
-	private List<Squadra> squadre;
+//	@OneToMany(mappedBy = "prenotazione")
+//	private List<Squadra> squadre;
 
 	@ManyToOne
 	private User utente;

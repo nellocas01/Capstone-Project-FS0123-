@@ -19,16 +19,8 @@ public class AdminRunner implements CommandLineRunner {
 	@Autowired
 	UsersRepository usersRepo;
 
-//	// mi serve per impostare la password criptata
-//	@Autowired
-//	private final PasswordEncoder bcrypt;
-
-	private final PasswordEncoder bcrypt;
-
 	@Autowired
-	public AdminRunner(PasswordEncoder bcrypt) {
-		this.bcrypt = bcrypt;
-	}
+	private PasswordEncoder bcrypt;
 
 	// mi serve per recuperare il ruolo ADMIN
 	@Autowired
@@ -96,8 +88,6 @@ public class AdminRunner implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		// TODO Auto-generated method stub
-		// System.out.println(nome + cognome + username + email + password);
 		createUserAdmin();
 	}
 

@@ -3,8 +3,11 @@ package com.example.CapstoneProject.entities;
 import java.util.UUID;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,7 +23,11 @@ public class Campo {
 	private UUID id;
 	private String nome;
 	private String indirizzo;
-	private int dimensioni;
+	@Enumerated(EnumType.STRING)
+	private Dimensioni dimensioni;
+
+	@OneToOne(mappedBy = "campo")
+	private Prenotazione prenotazione;
 
 //	@OneToMany(mappedBy = "campo")
 //	private List<Partita> partite;
@@ -28,7 +35,7 @@ public class Campo {
 //	@OneToMany(mappedBy = "campo")
 //	private List<Prenotazione> prenotazioni;
 
-	public Campo(String nome, String indirizzo, int dimensioni, User utente) {
+	public Campo(String nome, String indirizzo, Dimensioni dimensioni) {
 		super();
 		this.nome = nome;
 		this.indirizzo = indirizzo;

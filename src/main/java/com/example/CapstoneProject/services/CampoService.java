@@ -20,7 +20,7 @@ public class CampoService {
 	private CampoRepository campoRepo;
 
 	public Campo createCampo(Campo campo) {
-		Campo newCampo = new Campo(campo.getNome(), campo.getIndirizzo(), campo.getDimensioni());
+		Campo newCampo = new Campo(campo.getNome(), campo.getIndirizzo()); // , campo.getDimensioni());
 		return campoRepo.save(newCampo);
 	}
 
@@ -55,7 +55,7 @@ public class CampoService {
 		campoFound.setId(id);
 		campoFound.setNome(campo.getNome());
 		campoFound.setIndirizzo(campo.getIndirizzo());
-		campoFound.setDimensioni(campo.getDimensioni());
+		// campoFound.setDimensioni(campo.getDimensioni());
 
 		return campoRepo.save(campoFound);
 	}

@@ -6,6 +6,7 @@ import java.util.UUID;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -23,22 +24,24 @@ public class Prenotazione {
 	private UUID id;
 	private Date data;
 	@OneToOne
+	@JoinColumn(name = "campo_id")
 	private Campo campo;
 
 //	@OneToMany(mappedBy = "prenotazione")
 //	private List<Squadra> squadre;
 
 	@ManyToOne
+	@JoinColumn(name = "utente_id")
 	private User utente;
 
 //	@Enumerated(EnumType.STRING)
 //	private Stato stato;
 
-	public Prenotazione(Date data, Campo campo, User utente) {
+	public Prenotazione(Date data) {
 		super();
 		this.data = data;
-		this.campo = campo;
-		this.utente = utente;
+//		this.campo = campo;
+//		this.utente = utente;
 	}
 
 }

@@ -44,7 +44,7 @@ public class User implements UserDetails {
 	@JsonIgnore
 	private Set<Role> roles = new LinkedHashSet<>();
 
-	@OneToMany(mappedBy = "utente")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "utente")
 	private List<Prenotazione> prenotazioni;
 //
 //	@OneToMany(mappedBy = "utente")

@@ -2,6 +2,7 @@ package com.example.CapstoneProject;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import com.example.CapstoneProject.entities.Campo;
@@ -11,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Component
-//order
+@Order(1)
 public class CampoRunner implements CommandLineRunner {
 
 	@Autowired
@@ -19,7 +20,7 @@ public class CampoRunner implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		// Creazione di alcuni esempi di campi con faker
+		// Creazione di alcuni esempi di campi
 		Campo campo1 = new Campo("Campo A", "Indirizzo Campo A");
 		Campo campo2 = new Campo("Campo B", "Indirizzo Campo B");
 		Campo campo3 = new Campo("Campo C", "Indirizzo Campo C");
@@ -27,6 +28,7 @@ public class CampoRunner implements CommandLineRunner {
 		campoRepo.save(campo1);
 		campoRepo.save(campo2);
 		campoRepo.save(campo3);
+
 //		Faker faker = new Faker(new Locale("it"));
 //		List<Campo> campoDb = campoRepo.findAll();
 //		if (campoDb.size() == 0) {

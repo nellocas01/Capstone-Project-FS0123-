@@ -3,7 +3,9 @@ package com.example.CapstoneProject.entities;
 import java.util.Date;
 import java.util.UUID;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -23,14 +25,14 @@ public class Prenotazione {
 	@GeneratedValue
 	private UUID id;
 	private Date data;
-	@OneToOne
+	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL) // oppure relazionarlo col nome
 	@JoinColumn(name = "campo_id")
 	private Campo campo;
 
 //	@OneToMany(mappedBy = "prenotazione")
 //	private List<Squadra> squadre;
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY) // oppure relazionarlo col nome
 	@JoinColumn(name = "utente_id")
 	private User utente;
 
@@ -42,6 +44,15 @@ public class Prenotazione {
 		this.data = data;
 //		this.campo = campo;
 //		this.utente = utente;
+	}
+
+	public void setCampo(Campo campo) {
+		this.campo = campo;
+	}
+
+	public void setUtente(User utente) {
+		this.utente = utente;
+
 	}
 
 }

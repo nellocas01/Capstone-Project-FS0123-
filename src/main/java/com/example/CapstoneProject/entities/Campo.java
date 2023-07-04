@@ -3,6 +3,7 @@ package com.example.CapstoneProject.entities;
 import java.util.UUID;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
@@ -24,7 +25,7 @@ public class Campo {
 //	@Enumerated(EnumType.STRING)
 //	private Dimensioni dimensioni;
 
-	@OneToOne(mappedBy = "campo")
+	@OneToOne(fetch = FetchType.LAZY, mappedBy = "campo")
 	private Prenotazione prenotazione;
 
 //	@OneToMany(mappedBy = "campo")

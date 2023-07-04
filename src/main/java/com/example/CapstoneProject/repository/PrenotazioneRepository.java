@@ -10,6 +10,7 @@ import com.example.CapstoneProject.entities.Prenotazione;
 @Repository
 public interface PrenotazioneRepository extends JpaRepository<Prenotazione, UUID> {
 
-	// Qui puoi definire metodi personalizzati per eseguire query specifiche, se
-	// necessario
+//	@Query("UPDATE prenotazione SET campo_id = (SELECT id FROM campo)")
+//	void updateIdCampo();
+
 }

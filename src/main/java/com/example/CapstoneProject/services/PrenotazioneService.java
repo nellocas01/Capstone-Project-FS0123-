@@ -19,8 +19,9 @@ public class PrenotazioneService {
 	private PrenotazioneRepository prenotazioneRepo;
 
 	public Prenotazione createPrenotazione(Prenotazione prenotazione) {
-		Prenotazione newPrenotazione = new Prenotazione(prenotazione.getData()); // , prenotazione.getCampo(),
-		// prenotazione.getUtente());
+		Prenotazione newPrenotazione = new Prenotazione(prenotazione.getData());
+		newPrenotazione.setCampo(prenotazione.getCampo());
+		newPrenotazione.setUtente(prenotazione.getUtente());
 
 		return prenotazioneRepo.save(newPrenotazione);
 	}

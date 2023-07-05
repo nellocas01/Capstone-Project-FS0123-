@@ -12,5 +12,8 @@ public interface PrenotazioneRepository extends JpaRepository<Prenotazione, UUID
 
 //	@Query("UPDATE prenotazione SET campo_id = (SELECT id FROM campo)")
 //	void updateIdCampo();
+//	public Page<Prenotazione> findByUserAndDataPrenotata(User user, LocalDate dataPrenotata, Pageable pageable);
+//
+//	public Page<Campo> findByUser(User user, Pageable pageable);
 
 }

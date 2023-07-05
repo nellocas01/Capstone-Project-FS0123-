@@ -3,10 +3,8 @@ package com.example.CapstoneProject.entities;
 import java.util.UUID;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,8 +23,8 @@ public class Campo {
 //	@Enumerated(EnumType.STRING)
 //	private Dimensioni dimensioni;
 
-	@OneToOne(fetch = FetchType.LAZY, mappedBy = "campo")
-	private Prenotazione prenotazione;
+//	@OneToOne(fetch = FetchType.LAZY, mappedBy = "campo")
+//	private Prenotazione prenotazione;
 
 //	@OneToMany(mappedBy = "campo")
 //	private List<Partita> partite;

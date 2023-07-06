@@ -1,6 +1,6 @@
 package com.example.CapstoneProject.entities;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.UUID;
 
 import org.springframework.lang.NonNull;
@@ -24,7 +24,7 @@ public class Prenotazione {
 	@Id
 	@GeneratedValue
 	private UUID id;
-	private Date data;
+	private LocalDate data;
 
 //	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL) // oppure relazionarlo col nome
 //	@JoinColumn(name = "campo_id")
@@ -44,7 +44,7 @@ public class Prenotazione {
 //	@Enumerated(EnumType.STRING)
 //	private Stato stato;
 
-	public Prenotazione(Date data) {
+	public Prenotazione(LocalDate data) {
 		super();
 		this.data = data;
 //		this.campo = campo;

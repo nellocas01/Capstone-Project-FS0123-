@@ -28,8 +28,6 @@ public class Role {
 	private UUID id;
 	private String nome;
 
-	// @OneToMany(mappedBy = "role")
-	// private List<User> users;
 	@ManyToMany
 	@JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "role_id"), inverseJoinColumns = @JoinColumn(name = "user_id"))
 	private Set<User> users = new LinkedHashSet<>();

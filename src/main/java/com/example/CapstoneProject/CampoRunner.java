@@ -22,26 +22,17 @@ public class CampoRunner implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		// Creazione di alcuni esempi di campi
-//		Campo campo1 = new Campo("Campo A", "Indirizzo Campo A");
-//		Campo campo2 = new Campo("Campo B", "Indirizzo Campo B");
-//		Campo campo3 = new Campo("Campo C", "Indirizzo Campo C");
-//
-//		campoRepo.save(campo1);
-//		campoRepo.save(campo2);
-//		campoRepo.save(campo3);
-
 		Faker faker = new Faker(new Locale("it"));
 		List<Campo> campoDb = campoRepo.findAll();
 		if (campoDb.size() == 0) {
-			for (int i = 0; i < 10; i++) {
+			for (int i = 0; i < 5; i++) {
 				try {
 
 					String[] fieldPrefixes = { "Green", "Sunny", "Golden", "Victory", "Elite", "Dynamic", "Star",
 							"Royal" };
 					String[] fieldSuffixes = { "Field", "Stadium", "Grounds", "Park" };
 					String nome = faker.options().option(fieldPrefixes) + " " + faker.options().option(fieldSuffixes);
-					String indirizzo = "via " + faker.address().city();
+					String indirizzo = faker.address().streetName() + ", Napoli";
 
 					Campo newCampo = new Campo(nome, indirizzo);
 					campoRepo.save(newCampo);

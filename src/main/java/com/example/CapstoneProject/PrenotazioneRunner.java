@@ -1,7 +1,10 @@
 package com.example.CapstoneProject;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.util.concurrent.ThreadLocalRandom;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -27,12 +30,16 @@ public class PrenotazioneRunner implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		LocalDate data = LocalDate.now();
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+		LocalDateTime data = LocalDateTime.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+		LocalTime starTime = LocalTime.of(16, 0);
+		LocalTime endTime = LocalTime.of(23, 0);
 
 		for (int i = 0; i < 5; i++) {
-			data = data.plusDays(2);
-			LocalDate dataPrenotata = data;
+			data = data.plusDays(2).truncatedTo(ChronoUnit.MINUTES);
+			LocalTime randTime = getRandomTime(starTime, endTime);
+
+			LocalDateTime dataPrenotata = data.with(randTime);
 
 			String dataFormat = dataPrenotata.format(formatter);
 
@@ -40,6 +47,28 @@ public class PrenotazioneRunner implements CommandLineRunner {
 
 			prenotazioneRepo.save(prenotazione);
 
+			// Incrementa l'orario di inizio e di fine di 30 minuti
+			starTime = starTime.plusMinutes(30);
+			endTime = endTime.plusMinutes(30);
+
 		}
+	}
+
+	private LocalTime getRandomTime(LocalTime starTime, LocalTime endTime) {
+		int startMinutes = starTime.getHour() * 60 + starTime.getMinute();
+		int endMinutes = endTime.getHour() * 60 + endTime.getMinute();
+
+		int range = (endMinutes - startMinutes) / 30;
+		if (range <= 0) {
+			range = 1; // Imposta un limite minimo di 1 se l'intervallo è negativo o zero
+		}
+
+		int randomRange = ThreadLocalRandom.current().nextInt(range);
+		int randomMinutes = startMinutes + (randomRange * 30);
+
+		int hours = randomMinutes / 60;
+		int minutes = randomMinutes % 60;
+
+		return LocalTime.of(hours % 24, minutes);
 	}
 }

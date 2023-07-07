@@ -1,16 +1,17 @@
 package com.example.CapstoneProject.entities;
 
+import java.util.List;
 import java.util.UUID;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.OneToMany;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "campo")
+//@Table(name = "campo")
 @Data
 @NoArgsConstructor
 
@@ -20,23 +21,14 @@ public class Campo {
 	private UUID id;
 	private String nome;
 	private String indirizzo;
-//	@Enumerated(EnumType.STRING)
-//	private Dimensioni dimensioni;
 
-//	@OneToOne(fetch = FetchType.LAZY, mappedBy = "campo")
-//	private Prenotazione prenotazione;
-
-//	@OneToMany(mappedBy = "campo")
-//	private List<Partita> partite;
-//
-//	@OneToMany(mappedBy = "campo")
-//	private List<Prenotazione> prenotazioni;
+	@OneToMany(mappedBy = "campo")
+	private List<Prenotazione> prenotazioni;
 
 	public Campo(String nome, String indirizzo) {
 		super();
 		this.nome = nome;
 		this.indirizzo = indirizzo;
-//		this.dimensioni = dimensioni;
 	}
 
 }

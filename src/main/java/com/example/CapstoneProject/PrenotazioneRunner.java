@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.Locale;
 import java.util.concurrent.ThreadLocalRandom;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +12,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.example.CapstoneProject.entities.Prenotazione;
+import com.example.CapstoneProject.entities.Stato;
 import com.example.CapstoneProject.repository.CampoRepository;
 import com.example.CapstoneProject.repository.PrenotazioneRepository;
 import com.example.CapstoneProject.repository.UsersRepository;
+import com.github.javafaker.Faker;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -30,10 +33,14 @@ public class PrenotazioneRunner implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+		Faker faker = new Faker(new Locale("it"));
 		LocalDateTime data = LocalDateTime.now();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
 		LocalTime starTime = LocalTime.of(16, 0);
 		LocalTime endTime = LocalTime.of(23, 0);
+
+//		List<Campo> campoDb = campoRepo.findAll();
+//		List<User> userDb = utenteRepo.findAll();
 
 		for (int i = 0; i < 5; i++) {
 			data = data.plusDays(2).truncatedTo(ChronoUnit.MINUTES);
@@ -42,8 +49,11 @@ public class PrenotazioneRunner implements CommandLineRunner {
 			LocalDateTime dataPrenotata = data.with(randTime);
 
 			String dataFormat = dataPrenotata.format(formatter);
+			Stato stato = faker.options().option(Stato.class);
+//			Campo randomCampo = campoDb.get(faker.random().nextInt(campoDb.size()));
+//			User randUser = userDb.get(faker.random().nextInt(userDb.size()));
 
-			Prenotazione prenotazione = new Prenotazione(dataPrenotata);
+			Prenotazione prenotazione = new Prenotazione(dataPrenotata, stato);
 
 			prenotazioneRepo.save(prenotazione);
 

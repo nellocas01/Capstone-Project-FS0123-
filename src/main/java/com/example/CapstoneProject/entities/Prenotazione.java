@@ -3,9 +3,9 @@ package com.example.CapstoneProject.entities;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-import org.springframework.lang.NonNull;
-
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
@@ -25,18 +25,19 @@ public class Prenotazione {
 	@GeneratedValue
 	private UUID id;
 	private LocalDateTime data;
+	@Enumerated(EnumType.STRING)
+	private Stato stato;
 
 	@OneToOne
-	@NonNull
 	private Campo campo;
 
 	@ManyToOne
-	@NonNull
 	private User utente;
 
-	public Prenotazione(LocalDateTime data) {
+	public Prenotazione(LocalDateTime data, Stato stato) {
 		super();
 		this.data = data;
+		this.stato = stato;
 	}
 
 }

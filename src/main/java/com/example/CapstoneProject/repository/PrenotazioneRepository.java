@@ -10,10 +10,10 @@ import com.example.CapstoneProject.entities.Prenotazione;
 @Repository
 public interface PrenotazioneRepository extends JpaRepository<Prenotazione, UUID> {
 
-//	@Query("UPDATE prenotazione SET campo_id = (SELECT id FROM campo)")
-//	void updateIdCampo();
-//	public Page<Prenotazione> findByUserAndDataPrenotata(User user, LocalDate dataPrenotata, Pageable pageable);
-//
-//	public Page<Campo> findByUser(User user, Pageable pageable);
+//	@Query("INSERT INTO Prenotazione (campo, data, stato, utente, id) " + "SELECT c, :data, :stato, u, :id "
+//			+ "FROM Campo c, User u " + "WHERE c.id = :campoId "
+//			+ "AND NOT EXISTS (SELECT 1 FROM Prenotazione p WHERE p.campo.id = :campoId)")
+//	void insertCampo(@Param("campoId") UUID campoId, @Param("data") LocalDateTime data, @Param("stato") Stato stato,
+//			@Param("id") UUID id);
 
 }

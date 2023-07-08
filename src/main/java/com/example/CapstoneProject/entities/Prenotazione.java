@@ -3,6 +3,8 @@ package com.example.CapstoneProject.entities;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -24,6 +26,7 @@ public class Prenotazione {
 	@Id
 	@GeneratedValue
 	private UUID id;
+	@JsonFormat(pattern = "dd-MM-yyyy HH:mm")
 	private LocalDateTime data;
 	@Enumerated(EnumType.STRING)
 	private Stato stato;

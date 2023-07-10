@@ -42,15 +42,6 @@ public class User implements UserDetails {
 	@JsonIgnore
 	private Set<Role> roles = new LinkedHashSet<>();
 
-//	@OneToMany(fetch = FetchType.LAZY, mappedBy = "utente")
-//	private List<Prenotazione> prenotazioni;
-//
-//	@OneToMany(mappedBy = "utente")
-//	private List<Recensione> recensioni;
-//
-//	@ManyToMany(mappedBy = "giocatori")
-//	private List<Squadra> squadre;
-
 	public User(String name, String surname, String username, String email, String password) {
 		super();
 		this.name = name;
@@ -98,11 +89,5 @@ public class User implements UserDetails {
 		// TODO Auto-generated method stub
 		return true;
 	}
-
-	// TEST
-//	public static Object withUsername(String string) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
 
 }

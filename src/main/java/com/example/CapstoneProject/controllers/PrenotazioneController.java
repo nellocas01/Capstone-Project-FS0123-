@@ -29,11 +29,6 @@ public class PrenotazioneController {
 	@Autowired
 	PrenotazioneService prenotazioneService;
 
-//	public ResponseEntity<List<Prenotazione>> getAllPrenotazioni() {
-//		List<Prenotazione> prenotazioni = prenotazioneService.getAllPrenotazioni();
-//		return ResponseEntity.ok(prenotazioni);
-//	}
-
 	@GetMapping("")
 	public Page<Prenotazione> getAllPrenotazioni(@RequestParam(defaultValue = "0") int page,
 			@RequestParam(defaultValue = "10") int size, @RequestParam(defaultValue = "id") String sortBy) {
@@ -52,6 +47,7 @@ public class PrenotazioneController {
 	}
 
 	@PutMapping("/{id}")
+	@PreAuthorize("hasAuthority('ADMIN')")
 	public Prenotazione updatePrenotazione(@PathVariable UUID id, @RequestBody Prenotazione prenotazione)
 			throws Exception {
 		return prenotazioneService.updatePrenotazione(id, prenotazione);
@@ -60,6 +56,7 @@ public class PrenotazioneController {
 
 	@DeleteMapping("/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
+	@PreAuthorize("hasAuthority('ADMIN')")
 	public void deletePrenotazione(@PathVariable UUID id) throws Exception {
 		prenotazioneService.deletePrenotazione(id);
 	}

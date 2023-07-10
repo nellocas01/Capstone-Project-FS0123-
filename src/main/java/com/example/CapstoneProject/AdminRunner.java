@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +15,7 @@ import com.example.CapstoneProject.repository.RoleRepository;
 import com.example.CapstoneProject.repository.UsersRepository;
 
 @Component
+@Order(1)
 public class AdminRunner implements CommandLineRunner {
 
 	@Autowired

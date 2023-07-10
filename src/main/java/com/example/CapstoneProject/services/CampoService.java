@@ -20,7 +20,7 @@ public class CampoService {
 	private CampoRepository campoRepo;
 
 	public Campo createCampo(Campo campo) {
-		Campo newCampo = new Campo(campo.getNome(), campo.getIndirizzo()); // , campo.getDimensioni());
+		Campo newCampo = new Campo(campo.getNome(), campo.getIndirizzo());
 		return campoRepo.save(newCampo);
 	}
 
@@ -35,14 +35,6 @@ public class CampoService {
 
 		return campoRepo.findAll(pageable);
 	}
-//	public List<Campo> getAllCampi() {
-//		return campoRepository.findAll();
-//	}
-
-//	public Campo getCampoById(UUID id) {
-//		Optional<Campo> optionalCampo = campoRepository.findById(id);
-//		return optionalCampo.orElse(null);
-//	}
 
 	// read by Id
 	public Campo getCampoById(UUID id) throws NotFoundException {

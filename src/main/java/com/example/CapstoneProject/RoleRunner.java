@@ -15,9 +15,6 @@ public class RoleRunner implements CommandLineRunner {
 	@Autowired
 	RoleRepository roleRepo;
 
-	// @Autowired
-	// UsersRepository usersRepo;
-
 	@Override
 	public void run(String... args) throws Exception {
 

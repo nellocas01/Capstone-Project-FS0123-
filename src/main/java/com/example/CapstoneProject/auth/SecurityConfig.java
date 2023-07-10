@@ -52,6 +52,7 @@ public class SecurityConfig {
 		http.authorizeHttpRequests(auth -> auth.requestMatchers("/campi/**").authenticated());
 		http.authorizeHttpRequests(auth -> auth.requestMatchers("/prenotazioni/**").authenticated());
 		http.authorizeHttpRequests(auth -> auth.requestMatchers("/roles/**").authenticated());
+		http.authorizeHttpRequests(auth -> auth.requestMatchers("/crea-pagamento/**").authenticated());
 
 		// http.addFilterBefore(exceptionHandlerFilter, JWTAuthFilter.class);
 		http.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);

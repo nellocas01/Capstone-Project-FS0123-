@@ -1,5 +1,7 @@
 package com.example.CapstoneProject.auth;
 
+import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -48,7 +50,8 @@ public class AuthController {
 			throw new UnauthorizedException("Credenziali non valide");
 
 		String token = JWTTools.createToken(user);
-		return new ResponseEntity<>(new AuthenticationSuccessfullPayload(token), HttpStatus.OK);
+		UUID id = user.getId();
+		return new ResponseEntity<>(new AuthenticationSuccessfullPayload(token, id), HttpStatus.OK);
 	}
 
 }

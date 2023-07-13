@@ -50,6 +50,7 @@ public class PrenotazioneService {
 
 		prenotazioneFound.setId(id);
 		prenotazioneFound.setData(prenotazione.getData());
+		prenotazioneFound.setStato(prenotazione.getStato());
 		// prenotazioneFound.setCampo(prenotazione.getCampo());
 		// prenotazioneFound.setUtente(prenotazione.getUtente());
 		return prenotazioneRepo.save(prenotazioneFound);

@@ -13,4 +13,11 @@ public class StripeConfig {
 		return stripePrivateKey;
 	}
 
+	@Value("${PUBLIC_KEY_STRIPE}")
+	private String stripePublicKey;
+
+	public String getStripePublicKey() {
+		return stripePublicKey;
+	}
+
 }

@@ -23,7 +23,7 @@ import com.stripe.model.PaymentIntent;
 import com.stripe.param.PaymentIntentCreateParams;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/payment")
 public class PaymentController {
 	@Autowired
 	private StripeConfig stripeConfig;

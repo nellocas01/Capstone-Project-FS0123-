@@ -80,7 +80,7 @@ Assicurati che le credenziali corrispondano a quelle specificate nel file env.pr
 
 Avvia il database
 
-###4. Configura il file application.properties o env.properties
+### 4. Configura il file application.properties o env.properties
 
 ```bash
 spring.datasource.url=jdbc:postgresql://localhost:5432/DatabaseProgettoClonato
@@ -99,7 +99,7 @@ jwt.secret=stringasegreta
 ./mvnw spring-boot:run
 ```
 
-⚠️ Assicurati che la porta 8080 sia libera.
+> ⚠️ Assicurati che la porta 8080 sia libera.
 
 
 📌 Note aggiuntive

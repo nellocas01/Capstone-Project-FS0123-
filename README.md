@@ -1,48 +1,118 @@
-# Capstone-Project-FS0123-
-Progetto finale BackEnd del corso Full Stack Developer di EPICODE
+# ⚽ StonksBall – Backend
 
-FrontEnd Repository :
+Questo è il repository **Backend** del progetto _StonksBall_, un'applicazione web sviluppata come progetto finale del corso Full Stack Developer EPICODE.  
+Il progetto mira a facilitare l'organizzazione di partite di calcetto in modo semplice, dinamico e sicuro.
 
-https://github.com/nellocas01/Capstone-Project-FS0123-FrontEnd
+🔗 **Frontend repository**:  
+[https://github.com/nellocas01/Capstone-Project-FS0123-FrontEnd](https://github.com/nellocas01/Capstone-Project-FS0123-FrontEnd)
 
-# Organizzazione Partite di Calcetto⚽
+---
 
-Benvenuto nel repository del progetto di organizzazione partite di calcetto. Questo progetto consiste nello sviluppo di un'applicazione web che permette agli utenti di organizzare partite di calcetto, unirsi a partite esistenti e gestire i dettagli delle partite in modo semplice e intuitivo.🔥
+## 🎯 Obiettivi del progetto
 
-## Descrizione
+- Fornire una piattaforma per la gestione delle partite di calcetto: creazione, partecipazione, visualizzazione.
+- Proteggere i dati degli utenti tramite autenticazione sicura (JWT).
+- Offrire API RESTful complete per frontend, admin e gestione database.
+- Implementare logiche business modulari e scalabili tramite Spring Boot.
 
-"StonksBall" è una piattaforma innovativa che mette insieme gli appassionati di calcetto di ogni livello e permette loro di creare e partecipare a partite entusiasmanti. Con questa applicazione, puoi organizzare partite con i tuoi amici o trovare nuove persone con cui giocare nella tua zona.
+---
 
-Non importa se sei un giocatore esperto o un principiante, "StonksBall" ti offre un'esperienza completa per la gestione delle partite di calcetto. Puoi creare nuove partite, specificare la data, l'orario e il luogo.
+## ✅ Funzionalità implementate
 
-"StonksBall" ti fornisce anche una panoramica completa delle informazioni relative alle partite, incluso il luogo, l'orario e altre informazioni utili.
+- **Creazione di partite** con data, ora e luogo
+- **Partecipazione a partite** esistenti tramite stato di disponibilità
+- **Autenticazione e registrazione** sicura con JWT
+- **Ruoli utente (User/Admin)** con permessi differenziati
+- **Gestione delle partite** da parte degli admin
+- **Integrazione Stripe** (mock) per future funzionalità di pagamento
+- **Popolamento dati automatico** tramite Java Faker
+- **Import/export CSV** con OpenCSV
 
-Sia che tu voglia organizzare una partita con i tuoi amici, trovare nuove persone con cui giocare o semplicemente partecipare a partite di calcetto entusiasmanti, "StonksBall" è qui per rendere tutto più semplice e divertente.
+---
+
+## 🛠️ Tecnologie & Dipendenze
+
+| Strumento                | Descrizione                               |
+|--------------------------|-------------------------------------------|
+| **Java 17**              | Linguaggio principale                     |
+| **Spring Boot 3.1.1**    | Framework per applicazioni web            |
+| **Spring Security**      | Autenticazione e autorizzazione           |
+| **Spring Data JPA**      | ORM con Hibernate                         |
+| **PostgreSQL**           | Motore di database relazionale            |
+| **JWT (jjwt)**           | Token di autenticazione                   |
+| **Stripe SDK**           | Integrazione pagamenti (mock)             |
+| **OpenCSV**              | Lettura/scrittura file CSV                |
+| **Java Faker**           | Generazione dati fittizi per testing      |
+| **Lombok**               | Riduzione boilerplate code                |
+| **JUnit & Spring Test**  | Testing unitario e di integrazione        |
+
+---
 
 
-## Funzionalità🎯
+---
 
-- Creazione di partite: Gli utenti possono creare nuove partite specificando la data, l'orario e il luogo.
-- Partecipazione a partite: Gli utenti possono cercare partite esistenti e unirsi a quelle di loro interesse se risultano essere "in attesa" di conferma.
-- Visualizzazione delle informazioni: Le partite includono dettagli come il luogo, l'orario e altre informazioni utili.
-- Gestione delle partite: Gli admin possono modificare o cancellare le partite create dagli user.
-- Sistema di autenticazione: Per garantire la sicurezza, è presente un sistema di autenticazione sicuro basato su JWT token, per registrare nuovi utenti e accedere all'applicazione.
+## ⚙️ Setup e avvio del progetto
 
-## Obiettivi🎯
+### 1. Clonazione del repository
 
-L'obiettivo principale di questo progetto è fornire agli appassionati di calcetto una piattaforma semplice e conveniente per organizzare partite e partecipare a eventi sportivi nella loro zona. Alcuni obiettivi specifici includono:
+```bash
+git clone https://github.com/nellocas01/Capstone-Project-FS0123-.git
+cd Capstone-Project-FS0123-
+```
 
-- Creare un'interfaccia utente intuitiva e user-friendly per semplificare la navigazione e l'utilizzo dell'applicazione.
-- Implementare un sistema di autenticazione sicuro per proteggere i dati degli utenti.
-- Garantire una gestione efficiente delle partite, consentendo agli admin di modificare o cancellare le partite create da loro.
-- Offrire un'esperienza piacevole agli utenti, facilitando la ricerca e la partecipazione a partite di loro interesse.
+### 2. Installazione PostgreSQL e pgAdmin
 
-## Tecnologie utilizzate💻
+Scarica e installa:
 
-- Linguaggi di programmazione: HTML, CSS, JavaScript, Java
-- Framework e librerie: React-Bootstrap, Spring
-- Altre tecnologie: PostgreSQL, Postman
+PostgreSQL: https://www.postgresql.org/download/
 
-Speriamo che tu trovi questo progetto interessante e utile. Se hai domande o suggerimenti, non esitare a contattarmi.😄
+pgAdmin: https://www.pgadmin.org/download/
 
-Buon divertimento e buon calcetto!🏆⚽
+### 3. Creazione del database
+
+Apri pgAdmin
+
+Connettiti al server PostgreSQL locale
+
+Crea un nuovo database chiamato ad es. DatabaseProgettoClonato
+
+Assicurati che le credenziali corrispondano a quelle specificate nel file env.properties
+
+Avvia il database
+
+###4. Configura il file application.properties o env.properties
+
+```bash
+spring.datasource.url=jdbc:postgresql://localhost:5432/DatabaseProgettoClonato
+spring.datasource.username=tuo_username
+spring.datasource.password=tuo_password
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+jwt.secret=stringasegreta
+```
+
+### 5. Avvio del progetto (con Maven Wrapper)
+
+```bash
+./mvnw spring-boot:run
+```
+
+⚠️ Assicurati che la porta 8080 sia libera.
+
+
+📌 Note aggiuntive
+
+- Tutti gli endpoint sono documentati tramite annotazioni @RestController
+
+- Il progetto è pronto per integrazione con frontend React (vedi repo frontend)
+
+- L’uso di Java Faker consente di popolare dati realistici al boot
+
+- La struttura è pensata per scalabilità e testabilità
+
+# 👨‍💻 Autore
+**Aniello Casolla**
+- 📧 nellocasolla446@gmail.com
+- 📆 Ultimo aggiornamento: Luglio 2023
